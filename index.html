@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Core - Your Financial Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-credit-card"></i>
+                <span>Credit Core</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#advisor" class="nav-link">AI Advisor</a></li>
+                <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="#compare" class="nav-link">Compare Cards</a></li>
+                <li><a href="#tools" class="nav-link">Tools</a></li>
+                <li><a href="#education" class="nav-link">Learn</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Master Your <span class="gradient-text">Credit Journey</span>
+                </h1>
+                <p class="hero-subtitle">
+                    AI-powered financial guidance, smart credit tools, and personalized recommendations to help you achieve your financial goals.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('advisor')">
+                        <i class="fas fa-robot"></i>
+                        Get AI Advice
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('dashboard')">
+                        <i class="fas fa-chart-line"></i>
+                        Check Credit Health
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="credit-card-stack">
+                    <div class="credit-card card-1">
+                        <div class="card-chip"></div>
+                        <div class="card-number">•••• •••• •••• 1234</div>
+                        <div class="card-holder">JOHN DOE</div>
+                        <div class="card-expiry">12/25</div>
+                    </div>
+                    <div class="credit-card card-2">
+                        <div class="card-chip"></div>
+                        <div class="card-number">•••• •••• •••• 5678</div>
+                        <div class="card-holder">JANE SMITH</div>
+                        <div class="card-expiry">08/26</div>
+                    </div>
+                    <div class="credit-card card-3">
+                        <div class="card-chip"></div>
+                        <div class="card-number">•••• •••• •••• 9012</div>
+                        <div class="card-holder">ALEX JOHNSON</div>
+                        <div class="card-expiry">03/27</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number" data-target="850">0</div>
+                <div class="stat-label">Max Credit Score</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="50000">0</div>
+                <div class="stat-label">Users Helped</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-target="98">0</div>
+                <div class="stat-label">Success Rate %</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Advisor Section -->
+    <section id="advisor" class="advisor-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>AI-Powered Credit Advisor</h2>
+                <p>Get personalized financial advice powered by advanced algorithms</p>
+            </div>
+            <div class="advisor-container">
+                <div class="chat-interface">
+                    <div class="chat-header">
+                        <div class="ai-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="ai-info">
+                            <h3>Credit Assistant</h3>
+                            <span class="status online">Online</span>
+                        </div>
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message ai-message">
+                            <div class="message-content">
+                                Hello! I'm your AI credit advisor. I can help you with credit scores, debt management, and financial planning. What would you like to know?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <input type="text" id="chatInput" placeholder="Ask me about credit, debt, or financial planning..." class="chat-input">
+                        <button class="send-btn" onclick="sendMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="quick-questions">
+                    <h3>Quick Questions</h3>
+                    <div class="question-cards">
+                        <div class="question-card" onclick="askQuestion('How can I improve my credit score?')">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>Improve Credit Score</span>
+                        </div>
+                        <div class="question-card" onclick="askQuestion('What is a good credit utilization ratio?')">
+                            <i class="fas fa-percentage"></i>
+                            <span>Credit Utilization</span>
+                        </div>
+                        <div class="question-card" onclick="askQuestion('How to pay off debt faster?')">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Debt Payoff</span>
+                        </div>
+                        <div class="question-card" onclick="askQuestion('Best credit cards for beginners?')">
+                            <i class="fas fa-credit-card"></i>
+                            <span>First Credit Card</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credit Health Dashboard -->
+    <section id="dashboard" class="dashboard-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Credit Health Dashboard</h2>
+                <p>Monitor and improve your credit health with interactive tools</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dashboard-card credit-score-card">
+                    <h3>Credit Score Simulator</h3>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <svg class="score-svg" viewBox="0 0 200 200">
+                                <circle cx="100" cy="100" r="80" fill="none" stroke="#e0e0e0" stroke-width="20"/>
+                                <circle cx="100" cy="100" r="80" fill="none" stroke="url(#scoreGradient)" stroke-width="20" 
+                                        stroke-linecap="round" stroke-dasharray="502.4" stroke-dashoffset="502.4" id="scoreProgress"/>
+                                <defs>
+                                    <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#ff6b6b"/>
+                                        <stop offset="50%" style="stop-color:#ffd93d"/>
+                                        <stop offset="100%" style="stop-color:#6bcf7f"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="score-text">
+                                <span class="score-number" id="creditScore">720</span>
+                                <span class="score-label">Credit Score</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="score-factors">
+                        <div class="factor">
+                            <label>Payment History (35%)</label>
+                            <input type="range" min="0" max="100" value="85" class="slider" id="paymentHistory">
+                            <span class="factor-value">85%</span>
+                        </div>
+                        <div class="factor">
+                            <label>Credit Utilization (30%)</label>
+                            <input type="range" min="0" max="100" value="25" class="slider" id="creditUtilization">
+                            <span class="factor-value">25%</span>
+                        </div>
+                        <div class="factor">
+                            <label>Credit History Length (15%)</label>
+                            <input type="range" min="0" max="100" value="70" class="slider" id="creditHistory">
+                            <span class="factor-value">70%</span>
+                        </div>
+                        <div class="factor">
+                            <label>Credit Mix (10%)</label>
+                            <input type="range" min="0" max="100" value="60" class="slider" id="creditMix">
+                            <span class="factor-value">60%</span>
+                        </div>
+                        <div class="factor">
+                            <label>New Credit (10%)</label>
+                            <input type="range" min="0" max="100" value="80" class="slider" id="newCredit">
+                            <span class="factor-value">80%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card utilization-card">
+                    <h3>Credit Utilization</h3>
+                    <div class="utilization-gauge">
+                        <div class="gauge-container">
+                            <div class="gauge-fill" id="utilizationFill"></div>
+                            <div class="gauge-text">
+                                <span class="utilization-percent" id="utilizationPercent">25%</span>
+                                <span class="utilization-label">Utilization</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="utilization-inputs">
+                        <div class="input-group">
+                            <label>Current Balance</label>
+                            <input type="number" id="currentBalance" value="2500" placeholder="Enter balance">
+                        </div>
+                        <div class="input-group">
+                            <label>Credit Limit</label>
+                            <input type="number" id="creditLimit" value="10000" placeholder="Enter limit">
+                        </div>
+                    </div>
+                    <div class="utilization-tips">
+                        <div class="tip excellent">Excellent: Under 10%</div>
+                        <div class="tip good">Good: 10-30%</div>
+                        <div class="tip fair">Fair: 30-50%</div>
+                        <div class="tip poor">Poor: Over 50%</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card debt-payoff-card">
+                    <h3>Debt Payoff Calculator</h3>
+                    <div class="payoff-inputs">
+                        <div class="input-group">
+                            <label>Total Debt</label>
+                            <input type="number" id="totalDebt" value="5000" placeholder="Enter total debt">
+                        </div>
+                        <div class="input-group">
+                            <label>Interest Rate (%)</label>
+                            <input type="number" id="interestRate" value="18.5" step="0.1" placeholder="Enter APR">
+                        </div>
+                        <div class="input-group">
+                            <label>Monthly Payment</label>
+                            <input type="number" id="monthlyPayment" value="200" placeholder="Enter payment">
+                        </div>
+                    </div>
+                    <div class="payoff-results">
+                        <div class="result-item">
+                            <span class="result-label">Payoff Time</span>
+                            <span class="result-value" id="payoffTime">28 months</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Interest</span>
+                            <span class="result-value" id="totalInterest">$1,245</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Paid</span>
+                            <span class="result-value" id="totalPaid">$6,245</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="calculatePayoff()">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Card Comparison Section -->
+    <section id="compare" class="compare-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Credit Card Comparison</h2>
+                <p>Find the perfect credit card for your needs</p>
+            </div>
+            <div class="comparison-container">
+                <div class="filters-panel">
+                    <h3>Filter Cards</h3>
+                    <div class="filter-group">
+                        <label>Card Type</label>
+                        <select id="cardTypeFilter">
+                            <option value="all">All Types</option>
+                            <option value="cashback">Cash Back</option>
+                            <option value="travel">Travel</option>
+                            <option value="business">Business</option>
+                            <option value="student">Student</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Annual Fee</label>
+                        <select id="annualFeeFilter">
+                            <option value="all">Any Fee</option>
+                            <option value="no-fee">No Annual Fee</option>
+                            <option value="low-fee">Under $100</option>
+                            <option value="high-fee">$100+</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Credit Score Required</label>
+                        <select id="creditScoreFilter">
+                            <option value="all">Any Score</option>
+                            <option value="excellent">Excellent (750+)</option>
+                            <option value="good">Good (670-749)</option>
+                            <option value="fair">Fair (580-669)</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" onclick="filterCards()">Apply Filters</button>
+                </div>
+                <div class="cards-grid" id="cardsGrid">
+                    <!-- Cards will be populated by JavaScript -->
+                </div>
+            </div>
+            <div class="comparison-table" id="comparisonTable" style="display: none;">
+                <h3>Side-by-Side Comparison</h3>
+                <div class="table-container">
+                    <!-- Comparison table will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Tools Section -->
+    <section id="tools" class="tools-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Financial Tools</h2>
+                <p>Powerful calculators and tools to optimize your finances</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Interest Calculator</h3>
+                    </div>
+                    <div class="tool-content">
+                        <div class="calculator-tabs">
+                            <button class="tab-btn active" onclick="switchCalculator('compound')">Compound</button>
+                            <button class="tab-btn" onclick="switchCalculator('simple')">Simple</button>
+                        </div>
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label>Principal Amount</label>
+                                <input type="number" id="principal" value="1000" placeholder="Enter amount">
+                            </div>
+                            <div class="input-group">
+                                <label>Interest Rate (%)</label>
+                                <input type="number" id="rate" value="5" step="0.1" placeholder="Enter rate">
+                            </div>
+                            <div class="input-group">
+                                <label>Time Period (years)</label>
+                                <input type="number" id="time" value="5" placeholder="Enter years">
+                            </div>
+                            <div class="input-group" id="compoundFrequency">
+                                <label>Compound Frequency</label>
+                                <select id="frequency">
+                                    <option value="1">Annually</option>
+                                    <option value="2">Semi-annually</option>
+                                    <option value="4">Quarterly</option>
+                                    <option value="12">Monthly</option>
+                                    <option value="365">Daily</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="calculateInterest()">Calculate</button>
+                        <div class="calculation-result" id="interestResult"></div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <i class="fas fa-gift"></i>
+                        <h3>Reward Optimizer</h3>
+                    </div>
+                    <div class="tool-content">
+                        <div class="spending-categories">
+                            <div class="category-input">
+                                <label>Groceries</label>
+                                <input type="number" id="groceries" value="500" placeholder="Monthly spending">
+                                <span class="category-rate">2x points</span>
+                            </div>
+                            <div class="category-input">
+                                <label>Gas</label>
+                                <input type="number" id="gas" value="200" placeholder="Monthly spending">
+                                <span class="category-rate">3x points</span>
+                            </div>
+                            <div class="category-input">
+                                <label>Dining</label>
+                                <input type="number" id="dining" value="300" placeholder="Monthly spending">
+                                <span class="category-rate">2x points</span>
+                            </div>
+                            <div class="category-input">
+                                <label>Travel</label>
+                                <input type="number" id="travel" value="100" placeholder="Monthly spending">
+                                <span class="category-rate">5x points</span>
+                            </div>
+                            <div class="category-input">
+                                <label>Other</label>
+                                <input type="number" id="other" value="400" placeholder="Monthly spending">
+                                <span class="category-rate">1x points</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="optimizeRewards()">Optimize Rewards</button>
+                        <div class="optimization-result" id="rewardResult"></div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Payment Timeline</h3>
+                    </div>
+                    <div class="tool-content">
+                        <div class="timeline-inputs">
+                            <div class="input-group">
+                                <label>Loan Amount</label>
+                                <input type="number" id="loanAmount" value="20000" placeholder="Enter amount">
+                            </div>
+                            <div class="input-group">
+                                <label>Interest Rate (%)</label>
+                                <input type="number" id="loanRate" value="6.5" step="0.1" placeholder="Enter rate">
+                            </div>
+                            <div class="input-group">
+                                <label>Loan Term (years)</label>
+                                <input type="number" id="loanTerm" value="5" placeholder="Enter years">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" onclick="generateTimeline()">Generate Timeline</button>
+                        <div class="timeline-chart" id="timelineChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Financial Education</h2>
+                <p>Learn and master financial concepts with interactive content</p>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Credit Journey Map</h3>
+                    <div class="journey-map">
+                        <div class="journey-step" data-step="1">
+                            <div class="step-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Start Building</h4>
+                                <p>Get your first credit card or loan</p>
+                            </div>
+                        </div>
+                        <div class="journey-step" data-step="2">
+                            <div class="step-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Use Responsibly</h4>
+                                <p>Keep utilization low, pay on time</p>
+                            </div>
+                        </div>
+                        <div class="journey-step" data-step="3">
+                            <div class="step-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Build History</h4>
+                                <p>Maintain accounts for years</p>
+                            </div>
+                        </div>
+                        <div class="journey-step" data-step="4">
+                            <div class="step-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Achieve Excellence</h4>
+                                <p>Reach 750+ credit score</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <h3>Financial Concepts</h3>
+                    <div class="concepts-grid">
+                        <div class="concept-card" onclick="showConcept('apr')">
+                            <div class="concept-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <h4>APR</h4>
+                            <p>Annual Percentage Rate</p>
+                        </div>
+                        <div class="concept-card" onclick="showConcept('utilization')">
+                            <div class="concept-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h4>Utilization</h4>
+                            <p>Credit Usage Ratio</p>
+                        </div>
+                        <div class="concept-card" onclick="showConcept('compound')">
+                            <div class="concept-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <h4>Compound Interest</h4>
+                            <p>Interest on Interest</p>
+                        </div>
+                        <div class="concept-card" onclick="showConcept('fico')">
+                            <div class="concept-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>FICO Score</h4>
+                            <p>Credit Score Model</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <h3>Financial Glossary</h3>
+                    <div class="glossary-search">
+                        <input type="text" id="glossarySearch" placeholder="Search terms..." onkeyup="searchGlossary()">
+                    </div>
+                    <div class="glossary-grid" id="glossaryGrid">
+                        <!-- Glossary terms will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Credit Core</span>
+                    </div>
+                    <p>Your trusted financial assistant for credit management and financial growth.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="#advisor">AI Advisor</a></li>
+                        <li><a href="#dashboard">Credit Dashboard</a></li>
+                        <li><a href="#compare">Card Comparison</a></li>
+                        <li><a href="#tools">Calculators</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Learn</h4>
+                    <ul>
+                        <li><a href="#education">Education Center</a></li>
+                        <li><a href="#education">Credit Journey</a></li>
+                        <li><a href="#education">Glossary</a></li>
+                        <li><a href="#education">Concepts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Credit Core. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Concept Modal -->
+    <div id="conceptModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="conceptContent"></div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/advisor.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/comparison.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/education.js"></script>
+</body>
+</html>
+
