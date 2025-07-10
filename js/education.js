@@ -16,7 +16,7 @@ const financialConcepts = {
         example: 'A credit card advertises 15% interest, but with fees, the APR might be 17.5%.',
         tips: [
             'Always compare APRs, not just interest rates',
-            'Lower APR means lower borrowing costs',
+            'Lower APR  lower borrowing costs',
             'APR can be variable or fixed'
         ]
     },
